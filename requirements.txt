@@ -4,3 +4,6 @@ pyarrow
 pandas
 requests
 matplotlib
+xarray
+netCDF4
+scipy
