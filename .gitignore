@@ -1,0 +1,17 @@
+# Cached downloads and API pulls (large; re-creatable)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*.gpkg
+data/processed/*.sqlite
+*.nc
+
+# Secrets
+.env
+*.token
+
+# Python / Jupyter / Quarto
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+report/_freeze/
+report/*_files/
