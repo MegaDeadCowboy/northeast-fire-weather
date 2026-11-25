@@ -1,0 +1,14 @@
+metric,value,source_csv
+share_fires_lt500ac_not_mapped_by_mtbs,0.998108893724077,a_mtbs_gap.csv
+share_acres_in_fires_lt500ac,0.5522432436738008,a_mtbs_gap.csv
+states_with_zero_raws,2.0,d_station_density_by_state.csv
+raws_stations_total,100.0,d_station_density_by_state.csv
+min_stations_per_10k_km2_nonzero,0.6258740007234417,d_station_density_by_state.csv
+max_stations_per_10k_km2,5.249568861334977,d_station_density_by_state.csv
+ny_fires_per_year_min_1992_2024,107.0,a_annual_by_state.csv
+ny_fires_per_year_max_1992_2024,7546.0,a_annual_by_state.csv
+de_fires_per_year_max_1992_2024,39.0,a_annual_by_state.csv
+erc_median_percentile_fires_ge10ac,84.4,b_summary.csv
+share_fires_ge10ac_above_erc_median,0.874,b_summary.csv
+pct_hours_burn_window_open_6_stations,8.7,c_binding_constraint_region.csv
+pct_hours_wind_sole_failure,11.1,c_binding_constraint_region.csv
