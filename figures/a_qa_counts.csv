@@ -1,0 +1,7 @@
+step,records
+raw_records,239671
+dropped_duplicate_FOD_ID,0
+dropped_missing_date_or_coords,0
+dropped_likely_duplicate_same_day_1km_size,4359
+flagged_point_outside_reported_state,923
+clean_records,235312

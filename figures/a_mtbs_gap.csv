@@ -1,0 +1,7 @@
+metric,value
+n_fires_total,235312.0
+n_fires_lt500ac,234867.0
+share_fires_lt500ac,0.998108893724077
+acres_total,1378160.8256525
+acres_lt500ac,761080.0046625
+share_acres_lt500ac,0.5522432436738008

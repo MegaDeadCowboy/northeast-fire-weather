@@ -1,0 +1,15 @@
+NWCG_CAUSE_CLASSIFICATION,NWCG_GENERAL_CAUSE,n_fires,share
+Human,Missing data/not specified/undetermined,70173,0.2982125858434759
+Human,Debris and open burning,41740,0.17738151900455565
+Human,Arson/incendiarism,37783,0.1605655470184266
+Human,Equipment and vehicle use,17664,0.07506629496158292
+Human,Smoking,13143,0.05585350513360984
+Human,Recreation and ceremony,11000,0.04674644727000748
+Natural,Natural,9942,0.04225028897803767
+Human,Misuse of fire by a minor,9911,0.04211854899027674
+Missing data/not specified/undetermined,Missing data/not specified/undetermined,7079,0.030083463656762087
+Human,Power generation/transmission/distribution,6044,0.02568504793635684
+Human,Other causes,5873,0.024958353165159448
+Human,Railroad operations and maintenance,2925,0.012430305296797443
+Human,Fireworks,1905,0.008095634731760386
+Human,Firearms and explosives use,130,0.0005524580131909975
