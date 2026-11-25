@@ -7,3 +7,4 @@ matplotlib
 xarray
 netCDF4
 scipy
+tabulate

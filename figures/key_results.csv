@@ -1,0 +1,18 @@
+question,result,value,source_csv
+Q1,"Fires in record (cleaned), 1992–2024","235,312",a_qa_counts.csv
+Q1,Share of fires discovered Mar–May,52.8%,a_monthly_count_by_state.csv
+Q1,Share of fires < 500 ac (below MTBS's eastern threshold),99.8%,a_mtbs_gap.csv
+Q1,Share of burned area in fires < 500 ac,55.2%,a_mtbs_gap.csv
+Q1,Share of fires with a natural (lightning) cause,4.2%,a_cause.csv
+Q2,Fires ≥ 10 ac scored against their own cell's climatology,"10,043",b_summary.csv
+Q2,Median ERC percentile on discovery day,84.4,b_summary.csv
+Q2,Share of fires on days above the cell's median ERC,87.4%,b_summary.csv
+Q2,Median FM100 percentile on discovery day (low = dry),16.6,b_summary.csv
+Q2,Range of state median ERC percentiles,77.5–91.8,b_median_percentile_by_state.csv
+Q3,"Hours inside the burn window, 6 RAWS, 2025",8.7%,c_binding_constraint_region.csv
+Q3,Hours failing on wind (almost all too calm),64.2%,c_binding_constraint_region.csv
+Q3,Hours failing on RH (almost all too humid),61.5%,c_binding_constraint_region.csv
+Q3,Temperature failures that were too hot,"708 of 15,507 h",c_constraint_failures.csv
+Q4,"Active RAWS stations (FEMS), 12 states",100,d_station_density_by_state.csv
+Q4,States with no RAWS station,"CT, DE",d_station_density_by_state.csv
+Q4,"RAWS per 10,000 km² of land, lowest to highest (states with ≥1)",0.63–5.25,d_station_density_by_state.csv
