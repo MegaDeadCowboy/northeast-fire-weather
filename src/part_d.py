@@ -1,7 +1,7 @@
 """Part D: data landscape table, RAWS station density, and numbers behind the data-needs list.
 
 Run from repo root (after Parts A and B):  python -m src.part_d
-Pulls two small inputs from MegaDeadCowboy/fire-weather-windows (branch northeast-region),
+Pulls two small inputs from MegaDeadCowboy/fire-weather-windows (main branch),
 cached to data/reference/: the FEMS Northeast RAWS station list and the Part C result CSVs.
 Writes figures/d_*.csv, figures/c_*.csv (copies of Part C results), figures/d_station_density.png.
 """
@@ -21,7 +21,7 @@ from src.part_a import ALBERS, BLUES, HEX_KM, load_states
 
 REF = ROOT / "data" / "reference"
 REF.mkdir(parents=True, exist_ok=True)
-FWW_RAW = "https://raw.githubusercontent.com/MegaDeadCowboy/fire-weather-windows/northeast-region/"
+FWW_RAW = "https://raw.githubusercontent.com/MegaDeadCowboy/fire-weather-windows/main/"
 FWW_FILES = {
     "ne_raws_stations_fems.csv": "data/raw/fems/ne_stations.csv",
     "c_binding_constraint_region.csv": "results/northeast/binding_constraint_region.csv",
