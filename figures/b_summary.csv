@@ -1,0 +1,9 @@
+group,variable,n_fires,median_percentile,share_drier_than_median,sign_test_p_one_sided
+all,erc,10043,84.4,0.874,0.0
+all,fm100,10043,16.6,0.888,0.0
+spring,erc,5732,83.5,0.873,0.0
+spring,fm100,5732,16.4,0.889,0.0
+summer_fall,erc,3147,86.0,0.885,0.0
+summer_fall,fm100,3147,16.9,0.889,0.0
+winter,erc,1164,85.0,0.849,8.685086373921139e-138
+winter,fm100,1164,16.7,0.876,2.5707708081542517e-163
