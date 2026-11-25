@@ -55,13 +55,14 @@ def series_by_year(var, cells, years):
     ci = xr.DataArray(cells[:, 0], dims="cell")
     cj = xr.DataArray(cells[:, 1], dims="cell")
     for y in years:
+        print(f"  {var} {y}", end="\r", flush=True)
         with xr.open_dataset(GRID_DIR / f"ne_{var}_{y}.nc") as ds:
             lat, lon = coord_names(ds)
             da = ds[list(ds.data_vars)[0]]
             tdim = next((d for d in da.dims if d in ("day", "time")),
                         max((d for d in da.dims if d not in (lat, lon)), key=lambda d: da.sizes[d]))
             extra = [d for d in da.dims if d not in (lat, lon, tdim)]
-            da = da.isel({d: 0 for d in extra})  # e.g. a size-1 'crs' dim
+            da = da.isel({d: 0 for d in extra}).load()  # into memory: point reads from disk are very slow
             vals = da.isel({lat: ci, lon: cj}).transpose(tdim, "cell").values.astype("float32")
             dates = pd.DatetimeIndex(ds[tdim].values).normalize()
         out[y] = (dates, vals)
@@ -75,7 +76,7 @@ def percentiles(var, fires, cells_of_fire, n_cells):
     climo = np.full((len(CLIMO_YEARS), 367, n_cells), np.nan, dtype="float32")
     for k, y in enumerate(CLIMO_YEARS):
         dates, vals = data[y]
-        climo[k, dates.dayofyear, :] = vals
+        climo[k, dates.day_of_year, :] = vals
     fire_val = np.full(len(fires), np.nan, dtype="float32")
     pct = np.full(len(fires), np.nan, dtype="float32")
     cell = cells_of_fire[0]
@@ -86,7 +87,7 @@ def percentiles(var, fires, cells_of_fire, n_cells):
             continue
         v = vals[pos, cell[n]]
         fire_val[n] = v
-        doy = pd.Timestamp(d).dayofyear
+        doy = pd.Timestamp(d).day_of_year
         lo, hi = max(1, doy - HALF_WINDOW), min(366, doy + HALF_WINDOW)
         ref = climo[:, lo:hi + 1, cell[n]].ravel()
         ref = ref[~np.isnan(ref)]
