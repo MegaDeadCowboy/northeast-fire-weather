@@ -1,0 +1,6 @@
+geopandas>=0.14
+pyogrio>=0.7
+pyarrow
+pandas
+requests
+matplotlib
