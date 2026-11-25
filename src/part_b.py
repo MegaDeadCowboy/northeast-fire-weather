@@ -58,7 +58,10 @@ def series_by_year(var, cells, years):
         with xr.open_dataset(GRID_DIR / f"ne_{var}_{y}.nc") as ds:
             lat, lon = coord_names(ds)
             da = ds[list(ds.data_vars)[0]]
-            tdim = next(d for d in da.dims if d not in (lat, lon))
+            tdim = next((d for d in da.dims if d in ("day", "time")),
+                        max((d for d in da.dims if d not in (lat, lon)), key=lambda d: da.sizes[d]))
+            extra = [d for d in da.dims if d not in (lat, lon, tdim)]
+            da = da.isel({d: 0 for d in extra})  # e.g. a size-1 'crs' dim
             vals = da.isel({lat: ci, lon: cj}).transpose(tdim, "cell").values.astype("float32")
             dates = pd.DatetimeIndex(ds[tdim].values).normalize()
         out[y] = (dates, vals)
